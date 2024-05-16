@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    /* Similar to Notion's style */
+    color: black;
+    /* Ensuring text is black */
+    background-color: #f8f8f8;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+table {
+    width: 60%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    /* Centering text */
+    padding: 8px;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+.delete-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.rounded-button {
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.add-button {
+    font-size: 1em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 10px;
+    /* Added margin to the add button */
+}
+
+.add-input {
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid #ddd;
+}

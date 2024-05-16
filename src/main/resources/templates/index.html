@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To-Do List</title>
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>DevOps - To-Do list</h1>
+    <table>
+        <tr>
+            <th>Description</th>
+            <th></th>
+        </tr>
+        <tr th:each="todo : ${todos}">
+            <td th:text="${todo.description}"></td>
+            <td>
+                <form action="/todo/delete" method="post">
+                    <input type="hidden" name="id" th:value="${todo.id}">
+                    <button type="submit" class="delete-button rounded-button">🗑️</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <div style="margin-top: 20px; width: 60%; text-align: center;">
+        <form action="/todo" method="post" style="display: inline-block; width: 100%;">
+            <input type="text" class="add-input" name="description" required style="width: 65%; margin-right: 10px;">
+            <input type="submit" class="add-button" value="Add" style="width: 25%;">
+        </form>
+    </div>
+
+</body>
+
+</html>
