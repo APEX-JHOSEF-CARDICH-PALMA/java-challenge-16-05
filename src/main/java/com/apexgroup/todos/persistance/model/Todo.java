@@ -11,7 +11,9 @@ public class Todo {
     private long Id;
 
     private String Description;
-
+   
+    private String duedate;
+    
     public long getId() {
         return Id;
     }
@@ -38,4 +40,19 @@ public class Todo {
     public static Todo Create(String description) {
         return new Todo(description);
     }
+
+    /**
+     * @return String return the Duedate
+     */
+    public String getDuedate() {
+        return duedate;
+    }
+
+    /**
+     * @param Duedate the Duedate to set
+     */
+    public void setDuedate(String Duedate) {
+        this.duedate = Duedate;
+    }
+
 }

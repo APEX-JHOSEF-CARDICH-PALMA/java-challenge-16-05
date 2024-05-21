@@ -23,8 +23,8 @@ public class TodoController {
     }
 
     @PostMapping("todo")
-    public String create(@RequestParam String description) {
-        todoService.create(description);
+    public String create(@RequestParam String description, String duedate) {
+        todoService.create(description, duedate);
         return "redirect:/";
     }
 

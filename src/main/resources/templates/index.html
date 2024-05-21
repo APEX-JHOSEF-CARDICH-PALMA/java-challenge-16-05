@@ -11,10 +11,12 @@
     <table>
         <tr>
             <th>Description</th>
-            <th></th>
+            <th>Due Date</th>
+            <th>Remove To-Do</th>
         </tr>
         <tr th:each="todo : ${todos}">
             <td th:text="${todo.description}"></td>
+            <td th:text="${todo.duedate}"></td>
             <td>
                 <form action="/todo/delete" method="post">
                     <input type="hidden" name="id" th:value="${todo.id}">
@@ -27,6 +29,7 @@
     <div style="margin-top: 20px; width: 60%; text-align: center;">
         <form action="/todo" method="post" style="display: inline-block; width: 100%;">
             <input type="text" class="add-input" name="description" required style="width: 65%; margin-right: 10px;">
+            <input id="dateInput" type="date" class="add-input" name="duedate"/>
             <input type="submit" class="add-button" value="Add" style="width: 25%;">
         </form>
     </div>
@@ -34,3 +37,9 @@
 </body>
 
 </html>
+
+<script>
+
+    dateInput.min = new Date().toISOString().split("T")[0];
+
+</script>
