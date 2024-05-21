@@ -69,9 +69,24 @@ CREATE TABLE assignee_squad (
 
 ### Questions
 
+For the following questions, in order to get these information. We would need to create the database and implement a connection with our application. 
+We could use JDBC which is a tool used to connect a Java Application with a database. After the the database is created and the connection established, we use SQL queries to answer the following questions. 
+
 ❓ How would you retrieve the count of To-Dos per assignee (by name), grouped by squad (name)?
 
+```sql
+SELECT squad.name, assignee.name, COUNT(*)  FROM todo 
+INNER JOIN assignee ON todo.assignee_id = assignee.assignee_id 
+JOIN squad ON squad.squad_id = todo.squad_id 
+GROUP BY squad.name
+```
+
 ❓ How would you find To-Dos expiring in the next 2 weeks?
+
+```sql
+SELECT todo_id, description, due_date,  FROM todo 
+where due_date < SYSDATE + 14
+```
 
 ## Getting Started
 
